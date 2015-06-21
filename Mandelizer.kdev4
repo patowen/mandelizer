@@ -1,0 +1,4 @@
+[Project]
+Name=Mandelizer
+Manager=KDevCMakeManager
+VersionControl=kdevgit
