@@ -11,7 +11,7 @@ include_directories( ${GMP_INCLUDE_DIR} )
 include_directories( ${wxWidgets_INCLUDE_DIRS} )
 link_directories( ${wxWidgets_LIBRARIES} )
 
-add_executable(mandelizer mainwindow.cpp mainpanel.cpp mandelizer.cpp gridset.cpp colormapping.cpp color.cpp display.cpp grid.cpp screenpoint.cpp transformation.cpp point.cpp mandelbrot_calculator.cpp)
+add_executable(mandelizer mainwindow.cpp mainpanel.cpp mandelizer.cpp gridset.cpp colormapping.cpp color.cpp display.cpp grid.cpp screenpoint.cpp transformation.cpp point.cpp mandelbrotcalculator.cpp)
 
 target_link_libraries(mandelizer ${GMP_LIBRARIES} ${wxWidgets_LIBRARIES})
 

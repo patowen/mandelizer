@@ -25,7 +25,8 @@ END_EVENT_TABLE()
 
 MainPanel::MainPanel(wxFrame* parent) : wxPanel(parent, wxID_ANY, wxDefaultPosition, wxSize(800, 600))
 {
-	grid = std::unique_ptr<Grid>(new Grid(1024, 768, std::unique_ptr<Transformation>(new BasicTransformation(Point(), 3.0, 0.0))));
+	display.setColorMapping(std::unique_ptr<ColorMapping>(new BasicColorMapping()));
+	grid = std::unique_ptr<Grid>(new Grid(800, 600, std::unique_ptr<Transformation>(new BasicTransformation(Point(), 3.0, 0.0))));
 	grid->fill();
 }
 

@@ -31,20 +31,19 @@ void Display::render(wxBitmap& bmp, std::unique_ptr<Grid> const& grid)
 		wxNativePixelData::Iterator rowStart = p;
 		for ( int x = 0; x < bmp.GetWidth(); ++x, ++p )
 		{
-			if ((grid->getData(x, y)).escaped)
-			{
-				p.Red() = 255;
-				p.Green() = 255;
-				p.Blue() = 255;
-			}
-			else
-			{
-				p.Red() = 0;
-				p.Green() = 0;
-				p.Blue() = 0;
-			}
+			int red, green, blue;
+			colorMapping->getColor(grid->getData(x, y)).getRGB(red, green, blue);
+			p.Red() = red;
+			p.Green() = green;
+			p.Blue() = blue;
 		}
 		p = rowStart;
 		p.OffsetY(data, 1);
 	}
 }
+
+void Display::setColorMapping(std::unique_ptr<ColorMapping> colorMapping)
+{
+	this->colorMapping = std::move(colorMapping);
+}
+

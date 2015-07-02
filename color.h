@@ -21,6 +21,7 @@
 class Color
 {
 public:
+	Color() : red(0), green(0), blue(0) {}
 	Color(float red, float green, float blue) : red(red), green(green), blue(blue) {}
 	void getRGB(int &red, int &green, int &blue);
 	

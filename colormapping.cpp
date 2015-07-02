@@ -17,11 +17,11 @@
 
 #include "colormapping.h"
 
-Color BasicColorMapping::getColor(MandelbrotResult& result)
+Color BasicColorMapping::getColor(MandelbrotResult result)
 {
 	if (result.escaped)
 	{
-		return Color(1, 1, 1);
+		return Color(0, (result.iterations % 20) / 20.0, (result.iterations % 20) / 20.0);
 	}
 	else
 	{

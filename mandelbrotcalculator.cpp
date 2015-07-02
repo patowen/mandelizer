@@ -15,15 +15,7 @@
  * 
  */
 
-#include "mandelbrot_calculator.h"
-
-/*MandelbrotCalculator::MandelbrotCalculator()
-{
-	mpf_t x;
-	mpf_init (x);
-	mpf_set_d (x, 3.0);
-	
-}*/
+#include "mandelbrotcalculator.h"
 
 MandelbrotResult MandelbrotCalculator::calculate(Point p)
 {

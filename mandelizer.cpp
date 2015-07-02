@@ -32,7 +32,7 @@ bool Mandelizer::OnInit()
 	
 	frame->wxWindowBase::SetSizer(sizer);
 	frame->wxWindowBase::SetAutoLayout(true);
-	frame->wxWindowBase::SetMinSize(wxSize());
+	frame->wxTopLevelWindowBase::SetMinSize(wxSize(0, 0));
 	frame->wxTopLevelWindowBase::CenterOnScreen();
 	
 	frame->wxFrameBase::Show( true );

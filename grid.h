@@ -21,7 +21,8 @@
 #include <memory>
 #include <vector>
 
-#include "mandelbrot_calculator.h"
+#include "color.h"
+#include "mandelbrotcalculator.h"
 #include "transformation.h"
 
 class Grid
@@ -29,7 +30,7 @@ class Grid
 public:
 	Grid(int width, int height, std::unique_ptr<Transformation> transformation):
 		width(width), height(height), transformation(std::move(transformation)),
-		data(width*height) {}
+		data(width*height), colorData(width*height) {}
 	
 	void fill();
 	MandelbrotResult getData(int x, int y);
@@ -38,6 +39,7 @@ private:
 	int width, height;
 	std::unique_ptr<Transformation> transformation;
 	std::vector<MandelbrotResult> data;
+	std::vector<Color> colorData;
 };
 
 #endif // GRID_H

@@ -19,18 +19,18 @@
 #define COLORMAPPING_H
 
 #include "color.h"
-#include "mandelbrot_calculator.h"
+#include "mandelbrotcalculator.h"
 
 class ColorMapping
 {
 public:
-	virtual Color getColor(MandelbrotResult &result) = 0;
+	virtual Color getColor(MandelbrotResult result) = 0;
 };
 
-class BasicColorMapping
+class BasicColorMapping : public ColorMapping
 {
 public:
-	Color getColor(MandelbrotResult &result);
+	Color getColor(MandelbrotResult result);
 };
 
 #endif // COLORMAPPING_H

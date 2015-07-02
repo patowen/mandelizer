@@ -21,6 +21,7 @@
 #include <memory>
 #include <wx/bitmap.h>
 
+#include "colormapping.h"
 #include "gridset.h"
 #include "transformation.h"
 
@@ -28,8 +29,10 @@ class Display
 {
 public:
 	void render(wxBitmap &bmp, std::unique_ptr<Grid> const& grid);
+	void setColorMapping(std::unique_ptr<ColorMapping> colorMapping);
 private:
 	std::unique_ptr<Transformation> transformation;
+	std::unique_ptr<ColorMapping> colorMapping;
 	GridSet gridSet;
 };
 
